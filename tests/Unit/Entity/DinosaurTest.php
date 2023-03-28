@@ -24,7 +24,7 @@ class DinosaurTest extends TestCase
         self::assertSame('Tyrannosaurus', $dino->getGenus());
         self::assertSame(15, $dino->getLength());
         self::assertSame('Polo Sub2', $dino->getEnclosure());
-        self::assertGreaterThan(10, $dino->getLength(), 'Debería ser mayor a 10');
+
 
     }
 }
