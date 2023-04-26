@@ -21,5 +21,7 @@ Comando interesantes
 ### Paso 4
 * Ejecuta nuevamente la prueba
 
+> TDD le permite pensar en lo que necesita construir, antes de comenzar a codificarlo.
+
 ##### Next
 [Cap 04](https://symfonycasts.com/es/screencast/phpunit/tdd#play)
