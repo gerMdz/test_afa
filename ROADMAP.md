@@ -21,7 +21,12 @@ Comando interesantes
 ### Paso 4
 * Ejecuta nuevamente la prueba
 
+### Paso 5
+* Aclarar y repetir
+
 > TDD le permite pensar en lo que necesita construir, antes de comenzar a codificarlo.
+> Construimos hasta que las pruebas pasen (Den OK)
+> Una vez terminadas las pruebas se puede refactorizar tranquilo, las pruebas nos dirán si sigue funcionando todo bien
 
 ##### Next
-[Cap 05](https://symfonycasts.com/es/screencast/phpunit/tdd-part-2#play)
+[Cap 06](https://symfonycasts.com/es/screencast/phpunit/data-providers#play)

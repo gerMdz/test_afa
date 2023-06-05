@@ -42,7 +42,13 @@ class Dinosaur
         if($this->length >=10){
             return 'Grande';
         }
-        return 'No es grande';
+        if($this->length >= 5){
+            return 'Mediano';
+        }
+//        if($this->length < 10){
+//            return 'Mediano';
+//        }
+        return 'Chico';
 
     }
 }
