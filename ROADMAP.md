@@ -29,4 +29,4 @@ Comando interesantes
 > Una vez terminadas las pruebas se puede refactorizar tranquilo, las pruebas nos dirán si sigue funcionando todo bien
 
 ##### Next
-[Cap 06](https://symfonycasts.com/es/screencast/phpunit/data-providers#play)
+[Cap 07](https://symfonycasts.com/es/screencast/phpunit/incomplete-tests#play)

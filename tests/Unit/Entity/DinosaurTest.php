@@ -3,6 +3,7 @@
 namespace App\Tests\Unit\Entity;
 
 use App\Entity\Dinosaur;
+use Generator;
 use PHPUnit\Framework\TestCase;
 
 class DinosaurTest extends TestCase
@@ -28,24 +29,20 @@ class DinosaurTest extends TestCase
 
     }
 
-    public function testDinoMayor10MtsOrGreaterIsLarge():void
+    /** @dataProvider sizeDescriptionProvider */
+    public function testDinoTieneUnaDescriptionCorrectaParaSuLargo(int $length, string $expectedSize ):void
     {
-        $dino = new Dinosaur(name: 'GerTaurus', length: 12);
+        $dino = new Dinosaur(name: 'GerTaurus', length: $length);
 
-        self::assertSame('Grande', $dino->getSizeDescription(), 'Se supone que esto es un dinosaurio grande');
+        self::assertSame($expectedSize, $dino->getSizeDescription());
     }
 
-    public function testDinoEntre5And9MetersIsMedium():void
+
+
+    public function sizeDescriptionProvider(): Generator
     {
-        $dino = new Dinosaur(name: 'GerTaurus', length: 8);
-
-        self::assertSame('Mediano', $dino->getSizeDescription(), 'Se supone que esto es un dinosaurio mediano');
-    }
-
-    public function testDinoMenos5MtsIsSmall():void
-    {
-        $dino = new Dinosaur(name: 'GerTaurus', length: 4);
-
-        self::assertSame('Chico', $dino->getSizeDescription(), 'Se supone que esto es un dinosaurio chico');
+         yield 'Se supone que esto es un dinosaurio grande 10 mts.' => [10, 'Grande'];
+         yield 'Se supone que esto es un dinosaurio mediano 5mts.' => [5, 'Mediano'];
+         yield 'Se supone que esto es un dinosaurio chico 4 mts.' => [4, 'Chico'];
     }
 }
