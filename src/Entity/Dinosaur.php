@@ -2,12 +2,16 @@
 
 namespace App\Entity;
 
+use App\Enum\SaludStatusEnum;
+
 class Dinosaur
 {
     private string $name;
     private string $genus;
     private int $length;
     private string $enclosure;
+
+    private SaludStatusEnum $salud = SaludStatusEnum::SALUDABLE ;
 
     public function __construct(string $name, string $genus = 'Unknown', int $length = 0, string $enclosure = 'Unknown')
     {
@@ -50,5 +54,16 @@ class Dinosaur
 //        }
         return 'Chico';
 
+    }
+
+    public function isAceptaVisitas():bool
+    {
+        return $this->salud === SaludStatusEnum::SALUDABLE;
+    }
+
+    public function setSalud(SaludStatusEnum $salud):void
+    {
+
+        $this->salud = $salud;
     }
 }

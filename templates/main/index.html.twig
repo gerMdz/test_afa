@@ -7,10 +7,11 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>Name</th>
-                <th>Genus</th>
-                <th>Size</th>
+                <th>Nombre</th>
+                <th>Género</th>
+                <th>Tamaño</th>
                 <th>Enclosure</th>
+                <th>Acepta Visitas</th>
             </tr>
             </thead>
             <tbody>
@@ -20,6 +21,7 @@
                     <td>{{ dino.genus }}</td>
                     <td>{{ dino.getSizeDescription }}</td>
                     <td>{{ dino.enclosure }}</td>
+                    <td>{{ dino.aceptaVisitas ? 'Si':'No' }}</td>
                 </tr>
             {% endfor %}
             </tbody>

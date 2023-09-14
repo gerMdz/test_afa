@@ -3,6 +3,7 @@
 namespace App\Tests\Unit\Entity;
 
 use App\Entity\Dinosaur;
+use App\Enum\SaludStatusEnum;
 use Generator;
 use PHPUnit\Framework\TestCase;
 
@@ -44,5 +45,19 @@ class DinosaurTest extends TestCase
          yield 'Se supone que esto es un dinosaurio grande 10 mts.' => [10, 'Grande'];
          yield 'Se supone que esto es un dinosaurio mediano 5mts.' => [5, 'Mediano'];
          yield 'Se supone que esto es un dinosaurio chico 4 mts.' => [4, 'Chico'];
+    }
+
+    public function testAceptaVisitaPorDefecto()
+    {
+        $dino = new Dinosaur(name: 'GraTaurus');
+        self::assertTrue($dino->isAceptaVisitas());
+    }
+
+    public function testNoAceptaVisitaPorEnfermo()
+    {
+        $dino = new Dinosaur('VeroSaurias');
+        $dino->setSalud(SaludStatusEnum::ENFERMO);
+
+        self::assertFalse($dino->isAceptaVisitas());
     }
 }
