@@ -6,4 +6,5 @@ enum SaludStatusEnum:string
 {
     case SALUDABLE = 'Healthy';
     case ENFERMO = 'Sick';
+    case HAMBRIENTO = 'Hungry';
 }

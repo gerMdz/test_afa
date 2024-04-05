@@ -58,7 +58,7 @@ class Dinosaur
 
     public function isAceptaVisitas():bool
     {
-        return $this->salud === SaludStatusEnum::SALUDABLE;
+        return $this->salud !== SaludStatusEnum::ENFERMO;
     }
 
     public function setSalud(SaludStatusEnum $salud):void

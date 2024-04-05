@@ -37,7 +37,7 @@ Comando interesantes
 > Construimos hasta que las pruebas pasen (Den OK)
 > Una vez terminadas las pruebas se puede refactorizar tranquilo, las pruebas nos dirán si sigue funcionando todo bien
 
-######  
+######   
 
 Finalmente, como mencioné, los métodos del simulacro están todos vacíos. Sin embargo, para evitar errores de PHP,
 PHPUnit necesita "respetar" el tipo de retorno de los métodos. Debido a que getProgressTowardsHatching() devuelve un
@@ -47,6 +47,18 @@ devolvería automáticamente una simulación de esa clase/interfaz. En realidad,
 código: PHPUnit devuelve un objeto simulado ResponseInterface cuando llamamos a $httpClient->request(). ¡Muy
 inteligente!
 
+A) Tanto los mocks como los stubs son tipos de pruebas dobles. Pruebas dobles es sólo una palabra para
+describir clases que "sustituyen" a las versiones reales.
+
+B) Los mocks son pruebas dobles en las que afirmamos cómo se utiliza el objeto. En PHPUnit, cuando usa ->
+expects() (para afirmar el número de veces que se llama a un método) o ->with() (para afirmar los argumentos utilizados
+al llamar al método), su prueba doble es un "mock".
+
+C) Los stubs son pruebas dobles donde controlamos el valor de retorno de los métodos.
+
+Algunos frameworks de testing hacen una mayor distinción entre stubs y mocks. Pero en PHPUnit, en realidad describen la
+misma idea.
+
 ##### Next
 
-[Cap 11](https://symfonycasts.com/es/screencast/phpunit/mocking-stubs#play)
+[Cap 14](https://symfonycasts.com/es/screencast/phpunit/exceptions#play)
