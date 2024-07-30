@@ -4,6 +4,7 @@ namespace App\Service;
 
 use App\Enum\SaludStatusEnum;
 use Psr\Log\LoggerInterface;
+use RuntimeException;
 use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
@@ -50,7 +51,7 @@ class GithubService
 
     private function getDinoStatusFromLabels(array $labels): SaludStatusEnum
     {
-        $status = null;
+        $salud = SaludStatusEnum::SALUDABLE;
         foreach ($labels as $label) {
             $label = $label['name'];
             // We only care about "Status" labels
@@ -59,7 +60,12 @@ class GithubService
             }
             // Remove the "Status:" and whitespace from the label
             $status = trim(substr($label, strlen('Status:')));
+
+            $salud = SaludStatusEnum::tryFrom($status);
+            if (null === $salud) {
+                throw new RuntimeException(sprintf('%s es un estado desconocido', $status));
+            }
         }
-        return SaludStatusEnum::tryFrom($status);
+        return $salud;
     }
 }
