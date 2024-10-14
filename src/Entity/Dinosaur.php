@@ -13,8 +13,11 @@ class Dinosaur
 
     private SaludStatusEnum $salud = SaludStatusEnum::SALUDABLE ;
 
-    public function __construct(string $name, string $genus = 'Unknown', int $length = 0, string $enclosure = 'Unknown')
+    public function __construct(string $name, string|null $genus = null, int|null $length = null, string|null $enclosure = null)
     {
+        $length ??= 0;
+        $genus ??= 'Unknown';
+        $enclosure ??= 'Unknown';
         $this->name = $name;
         $this->genus = $genus;
         $this->length = $length;

@@ -64,3 +64,5 @@ misma idea.
 [Cap 3](https://symfonycasts.com/es/screencast/phpunit/real-test)
 
 Está completo, pero no tomó la clase 3
+
+Vamos a leer todo de corrido
