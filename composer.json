@@ -15,7 +15,7 @@
         "symfony/http-client": "6.1.*",
         "symfony/runtime": "6.4.*",
         "symfony/twig-bundle": "6.1.*",
-        "symfony/yaml": "6.1.*"
+        "symfony/yaml": "6.4.*"
     },
     "config": {
         "allow-plugins": {
